@@ -1,10 +1,16 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, SafeAreaView } from 'react-native';
+import { useRoute, useNavigation } from '@react-navigation/core';
 import Message from '../components/Message';
 import chatRoomData from '../assets/dummy-data/Chats';
 import MessageInput from '../components/MessageInput';
 
 export default function ChatRoomScreen(){
+  const route = useRoute();
+  const navigation = useNavigation();
+
+  navigation.setOptions({ title: 'Irineu'})
+
   return (
     <SafeAreaView style={styles.page}>
       <FlatList 
