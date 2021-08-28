@@ -13,9 +13,9 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.page}>
-      <Pressable onPress={logOut} style={{ height: 150}}>
+      {/* <Pressable onPress={logOut} style={{ height: 150}}>
         <Text>SAAAI MZR</Text>
-      </Pressable>
+      </Pressable> */}
       <FlatList 
         data={chatRoomsData}
         showsVerticalScrollIndicator={false}
