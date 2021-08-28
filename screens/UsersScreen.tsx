@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { Text, Image, View, StyleSheet, FlatList, Pressable } from 'react-native';
-import ChatRoomItem from '../components/ChatRoomItem';
 
-import chatRoomsData from '../assets/dummy-data/ChatRooms';
+import Users from '../assets/dummy-data/Users';
+import UserItem from '../components/UserItem';
 
 export default function UsersScreen() {
 
   return (
     <View style={styles.page}>
       <FlatList 
-        data={chatRoomsData}
+        data={Users}
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <ChatRoomItem chatRoom={item}/>}
+        renderItem={({ item }) => <UserItem user={item}/>}
       />
     </View>
   );
