@@ -10,8 +10,9 @@ import { ColorSchemeName, Image, Pressable, Text, useWindowDimensions, View } fr
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 
-import HomeScreen from '../screens/HomeScreen';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
+import HomeScreen from '../screens/HomeScreen';
+import UsersScreen from '../screens/UsersScreen';
 
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -47,6 +48,13 @@ function RootNavigator() {
         options={{ 
           headerTitle: ChatRoomHeader, 
           headerBackTitleVisible: false,
+        }}
+      />
+      <Stack.Screen 
+        name="UsersScreen" 
+        component={UsersScreen} 
+        options={{ 
+          title: "Users",
         }}
       />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
@@ -91,7 +99,7 @@ const HomeHeader = (props) => {
         color="black"
         style={{ marginHorizontal: 10 }}
       />
-      <Pressable>
+      <Pressable onPress={() => navigation.navigate('UsersScreen')}>
         <Feather
           name="edit-2"
           size={24}
