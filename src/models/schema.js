@@ -324,8 +324,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "untitledfield": {
-                    "name": "untitledfield",
+                "status": {
+                    "name": "status",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -404,5 +404,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "1068ab9300efd8ade6f89d8b2c0e3ec5"
+    "version": "72e7af9c8ad2f14cec4d3302473aaf5f"
 };

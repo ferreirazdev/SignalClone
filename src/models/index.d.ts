@@ -57,7 +57,7 @@ export declare class User {
   readonly id: string;
   readonly name: string;
   readonly imageUri?: string;
-  readonly untitledfield?: string;
+  readonly status?: string;
   readonly Messages?: (Message | null)[];
   readonly chatrooms?: (ChatRoomUser | null)[];
   readonly createdAt?: string;

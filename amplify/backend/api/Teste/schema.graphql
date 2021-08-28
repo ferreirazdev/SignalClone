@@ -17,7 +17,7 @@ type User @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String!
   imageUri: String
-  untitledfield: String
+  status: String
   Messages: [Message] @connection(keyName: "byUser", fields: ["id"])
   chatrooms: [ChatRoomUser] @connection(keyName: "byUser", fields: ["id"])
 }

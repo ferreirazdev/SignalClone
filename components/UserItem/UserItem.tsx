@@ -6,7 +6,6 @@ import { Auth, DataStore } from 'aws-amplify';
 import { ChatRoom, User, ChatRoomUser } from '../../src/models';
 
 export default function UserItem({ user }){
-
   const navigation = useNavigation();
 
   const onPress = async () => {

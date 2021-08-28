@@ -79,7 +79,7 @@ const HomeHeader = (props) => {
     >
       <Image
         source={{
-          uri: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg",
+          uri: "https://github.com/ferreirazdev.png",
         }}
         style={{ width: 30, height: 30, borderRadius: 30 }}
       />
