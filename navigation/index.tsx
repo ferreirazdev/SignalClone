@@ -10,6 +10,7 @@ import { ColorSchemeName, Image, Pressable, Text, useWindowDimensions, View } fr
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 
+import ChatRoomHeader from './ChatRoomHeader';
 import ChatRoomScreen from '../screens/ChatRoomScreen';
 import HomeScreen from '../screens/HomeScreen';
 import UsersScreen from '../screens/UsersScreen';
@@ -45,10 +46,10 @@ function RootNavigator() {
       <Stack.Screen 
         name="ChatRoom" 
         component={ChatRoomScreen} 
-        options={{ 
-          headerTitle: ChatRoomHeader, 
+        options={({ route }) => ({ 
+          headerTitle: () => <ChatRoomHeader id={route.params?.id} />, 
           headerBackTitleVisible: false,
-        }}
+        })}
       />
       <Stack.Screen 
         name="UsersScreen" 
@@ -111,54 +112,7 @@ const HomeHeader = (props) => {
   )
 }
 
-const ChatRoomHeader = (props) => {
 
-  const { width } = useWindowDimensions();
-  const navigation = useNavigation();
-
-  return(
-    <View
-      style={{
-        flexDirection: "row",
-        justifyContent: "space-between",
-        width: width - 50,
-        padding: 10,
-        alignItems: "center",
-      }}
-    >
-      <Image
-        source={{
-          uri: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/vadim.jpg",
-        }}
-        style={{ width: 30, height: 30, borderRadius: 30, marginLeft: -30 }}
-      />
-      <Text
-        style={{
-          flex: 1,
-          textAlign: "left",
-          marginLeft: 20,
-          fontWeight: "bold",
-        }}
-      >
-        {props.children}
-      </Text>
-      <Feather
-        name="camera"
-        size={24}
-        color="black"
-        style={{ marginHorizontal: 10 }}
-      />
-      <Pressable>
-        <Feather
-          name="edit-2"
-          size={24}
-          color="black"
-          style={{ marginHorizontal: 10, marginRight: 30 }}
-        />
-      </Pressable>
-    </View>
-  )
-}
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
